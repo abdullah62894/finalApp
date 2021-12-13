@@ -8,8 +8,7 @@ from django.db.models import Q
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import ugettext_lazy as _
 from .managers import MyUserManager
-from django_currentuser.db.models import CurrentUserField
-from django_currentuser.middleware import get_current_authenticated_user
+
 
 
 # A primitive extension of the standard User table from Django lib
