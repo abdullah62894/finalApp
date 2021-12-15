@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-0byeum1k9phqh^^cs7xg_b@o2e^wv#g5gxos&w!-kakbx74_t8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://erp-fyp-f18.herokuapp.com/','127.0.0.1']
+ALLOWED_HOSTS = ['*']
 CORS_ORIGIN_ALLOW_ALL = True
 
 
