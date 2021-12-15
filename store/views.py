@@ -9,7 +9,7 @@ from .serializers import RawMaterialSerializerRMCodeNumber, RawMaterialSerialize
 from .serializers import RMDemandSerializerInput, RMDemandSerializerDNo
 
 
-class StoreView(APIView):
+class RMCodeView(APIView):
     serializer_class = RawMaterialSerializerRMCodeNumber
 
     def post(self, request):
@@ -31,7 +31,7 @@ class StoreView(APIView):
         return Response("account not found One")
 
 
-class MaterialName(APIView):
+class MaterialNameView(APIView):
     serializer_class = RawMaterialSerializerMaterialName
 
     def post(self, request):
@@ -50,7 +50,7 @@ class MaterialName(APIView):
         return Response("Check")
 
 
-class RMCodeInputAPI(APIView):
+class RawMaterialInputAPI(APIView):
     serializer_class = RawMaterialSerializerInput
 
     def post(self, request):
@@ -92,7 +92,7 @@ class RMDemandInputAPI(APIView):
         return Response("Check")
 
 
-class RMDemandDNoAPI(APIView):
+class RMDemandView(APIView):
     serializer_class = RMDemandSerializerDNo
 
     def post(self, request):
@@ -133,7 +133,7 @@ class DemandedMaterialInputAPI(APIView):
         return Response("Check")
 
 
-class DemandedMaterialDNoAPI(APIView):
+class DemandedMaterialDNoView(APIView):
     serializer_class = DemandedMaterialsDNoSerializerInput
 
     def post(self, request):
