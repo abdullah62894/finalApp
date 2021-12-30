@@ -21,8 +21,8 @@ class RawMaterials(models.Model):             #2 Api's
         return str('%s %s' % (self.RMCode, self.Material))
 
 
-class RMDemand(models.Model):              #1 Api   input in all fields
-    DNo = models.CharField(unique=True, max_length=20, null=False, help_text="DN01")
+class RMDemand(models.Model):
+    DNo = models.IntegerField(unique=True,  null=False, help_text="01")
     Date = models.DateField(null=False)    #2 Api   get Api , Dno given and whole data is return from table
     PlanNo = models.CharField(unique=True, max_length=20, null=False, help_text="PLN01")
     CancelledDates = models.DateField(null=False)
@@ -43,7 +43,7 @@ class DemandedMaterials(models.Model):   # 1 Api to input data
     CurrentStock = models.CharField(max_length=200, null=False)
     status = models.CharField(max_length=200,null=False)
     Priority = models.CharField(default='1',max_length=50,choices=ChoiceRole)
-    DNo =  models.ForeignKey(RMDemand, to_field = 'DNo', on_delete=models.CASCADE)
+    DNo = models.IntegerField(null=False)
     RMCode = models.ForeignKey(RawMaterials, to_field = 'RMCode', on_delete=models.CASCADE)
 
     def __str__(self):
